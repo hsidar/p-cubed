@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @project.avatar.url(:thumb) %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<ul>
+<% @statuses.each do |status|%>
+	<li><%= status.content %>
+		<% if user_signed_in? %>
+		<%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Edit', edit_status_path(status) %>
+		<% end %>
+	</li>
+<% end %>
+</ul>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit Project', edit_project_path(@project) %>
+<%= link_to 'Update Status', {:controller => "statuses", :action => "new", :project_id => @project.id} %>
+<% end %>
+
+<%= link_to 'Back', projects_path %>
