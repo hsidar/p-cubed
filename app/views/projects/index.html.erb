@@ -3,13 +3,15 @@
 	<div class="panel panel-default">
 	<div class="panel-body">
 		<div class="explode"></div>
+		<% if user_signed_in? %>
 		<button class="sassybutton">Update Status</button>
+		<% end %>
 		<button class="classybutton">Back</button>
 	</div>
 	</div>
 </div>
 
-<h1 style="text-align:center;">WHAT IS <%= current_user.email %> WORKING ON?</h1>
+<h1 style="text-align:center;">WHAT IS USER WORKING ON?</h1>
 
 <div class="row">
 <% @projects.each do |project|%>
@@ -22,11 +24,11 @@
 		<div class="panel-body">
 			<%= link_to (image_tag project.avatar.url(:medium)), project, remote: true %>
 		</div>
-		<div class="panel-footer">
+		<div class="panel-footer current-status<%= project.id %>">
 			<% if project.statuses.last == nil %>
 			<p>Status: Not begun</p>
 			<% else %>
-			<p>Status: <%= project.statuses.last.content %></p>
+			<p data-toggle="tooltip" title="<%= project.statuses.last.content %>">Status: <%= project.statuses.last.content %></p>
 			<% end %>
 		</div>
 	</div>

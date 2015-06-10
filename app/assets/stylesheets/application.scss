@@ -2,7 +2,13 @@
 @import "bootstrap";
 
 .panel-body{
-	background: rgba(10,10,10,255);
+	background:rgba(10,10,10,255);
+}
+
+.panel-footer p{
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
 }
 
 .row{
@@ -29,4 +35,8 @@
     transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
     -webkit-transition: opacity .25s ease-in-out;
+}
+
+.explode {
+	display:none;
 }

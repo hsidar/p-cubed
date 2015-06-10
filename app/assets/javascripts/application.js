@@ -19,7 +19,9 @@
 		
 		$('.classybutton').click(function(){
 			
-			$('.slather').css({'z-index' : '-5', 'opacity' : '0'});
+			$('.explode').slideUp(350, function(){
+					$('.slather').css({'z-index' : '-5', 'opacity' : '0'});
+			});
 		});
 		
 		$('.sassybutton').click(function(){

@@ -1,3 +1,5 @@
 $('.explode').html("<%= j render :partial => 'projects/project' %>");
 
 $('.statupdate').slideUp(350);
+
+$('.current-status<%= @project.id %>').html("<p>Status: <%= @project.statuses.last.content %></p>")
