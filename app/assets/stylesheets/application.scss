@@ -19,11 +19,11 @@
 	text-align:right;
 }
 
-.newprojectbutton a {
+.newprojectbutton a{
 	color:white;
 }
 
-.slather {
+.slather{
 	position:fixed;
 	top:0;
 	left:0;
@@ -38,5 +38,11 @@
 }
 
 .explode {
+	padding:5vh;
 	display:none;
+	text-align:center;
+}
+
+.explode img{
+	float:left;
 }
