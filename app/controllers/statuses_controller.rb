@@ -16,17 +16,9 @@ class StatusesController < ApplicationController
   # POST /statuses
   # POST /statuses.json
   def create
-    @status = Status.new(status_params)
-
-    respond_to do |format|
-      if @status.save
-        format.html { redirect_to "/projects/" + @status.project.id.to_s, notice: 'Status was successfully created.' }
-        format.json { render :show, status: :created, location: @status }
-      else
-        format.html { render :new }
-        format.json { render json: @status.errors, status: :unprocessable_entity }
-      end
-    end
+    @status = Status.create(status_params)
+    @project = Project.find(@status.project_id)
+    @statuses = @project.statuses.all
   end
 
   # PATCH/PUT /statuses/1

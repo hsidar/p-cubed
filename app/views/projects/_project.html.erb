@@ -1,0 +1,50 @@
+<%= image_tag @project.avatar.url(:thumb) %>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<ul>
+<% @statuses.each do |status|%>
+	<li><%= status.content %>
+		<% if user_signed_in? %>
+		<%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Edit', edit_status_path(status) %>
+		<% end %>
+	</li>
+<% end %>
+</ul>
+
+<div class="statupdate" style="display:none">
+	<%= form_for @status, remote: true do |f| %>
+	  <% if @status.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(@status.errors.count, "error") %> prohibited this status from being saved:</h2>
+
+	      <ul>
+	      <% @status.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+	  <div class="field">
+	    <%= f.label :content %><br>
+	    <%= f.text_field :content %>
+	  </div>
+	  <div class="field" style="display:none;">
+	    <%= f.label :project_id %><br>
+	    <%= f.text_field :project_id, value: @project.id %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+	<% end %>
+</div>

@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+	$(document).ready(function(){
+		
+		$('.classybutton').click(function(){
+			
+			$('.slather').css({'z-index' : '-5', 'opacity' : '0'});
+		});
+		
+		$('.sassybutton').click(function(){
+			
+			$('.statupdate').slideDown(350);
+		});
+	});

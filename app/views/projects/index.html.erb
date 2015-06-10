@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="slather">
+	<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="explode"></div>
+		<button class="sassybutton">Update Status</button>
+		<button class="classybutton">Back</button>
+	</div>
+	</div>
+</div>
 
 <h1 style="text-align:center;">WHAT IS <%= current_user.email %> WORKING ON?</h1>
 
@@ -11,7 +20,7 @@
 			<p>since <%= project.startdate %></p>
 		</div>
 		<div class="panel-body">
-			<%= link_to (image_tag project.avatar.url(:medium)), project %>
+			<%= link_to (image_tag project.avatar.url(:medium)), project, remote: true %>
 		</div>
 		<div class="panel-footer">
 			<% if project.statuses.last == nil %>
