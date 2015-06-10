@@ -1,0 +1,18 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.panel-body{
+	background: rgba(10,10,10,255);
+}
+
+.row{
+	margin-right:0;
+}
+
+.signinout{
+	text-align:right;
+}
+
+.newprojectbutton a {
+	color:white;
+}

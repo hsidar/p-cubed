@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Projects</h1>
+<h1 style="text-align:center;">WHAT IS <%= current_user.email %> WORKING ON?</h1>
+
+<div class="row">
 <% @projects.each do |project|%>
-	<div class="project">
-		<p><%= project.title %></p>
-		<p>since <%= project.startdate %></p>
-		<p><%= link_to (image_tag project.avatar.url(:medium)), project %></p>
-		<% if project.statuses.last == nil %>
-		<p>Status: Not begun</p>
-		<% else %>
-		<p>Status: <%= project.statuses.last.content %></p>
-		<% end %>
+	<div class="col-md-4">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= project.title %></h3>
+			<p>since <%= project.startdate %></p>
+		</div>
+		<div class="panel-body">
+			<%= link_to (image_tag project.avatar.url(:medium)), project %>
+		</div>
+		<div class="panel-footer">
+			<% if project.statuses.last == nil %>
+			<p>Status: Not begun</p>
+			<% else %>
+			<p>Status: <%= project.statuses.last.content %></p>
+			<% end %>
+		</div>
+	</div>
 	</div>
 <% end %>
+</div>
 <br>
 
 <% if user_signed_in? %>
-<%= link_to 'New Project', new_project_path %>
+<button class="btn btn-primary newprojectbutton"><span class="glyphicon glyphicon-plus"></span><%= link_to ' new project', new_project_path %></button>
 <% end %>

@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   belongs_to :user
   has_many :statuses
+  has_many :pictures
   validates :title, presence: true
   validates :description, presence: true
 end
