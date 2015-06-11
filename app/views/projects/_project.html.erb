@@ -14,7 +14,7 @@
 <% @statuses.each do |status|%>
 	<li><%= status.content %>
 		<% if user_signed_in? %>
-		<%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
 		<%= link_to 'Edit', edit_status_path(status) %>
 		<% end %>
 	</li>

@@ -1,0 +1,12 @@
+$('.explode').html("<%= j render :partial => 'projects/project' %>");
+
+
+<% if @project.statuses.last == nil %>
+  
+$('.current-status<%= @project.id %>').html("<p>Status: No status to show.</p>")
+  
+<% else %>
+
+$('.current-status<%= @project.id %>').html("<p>Status: <%= @project.statuses.last.content %></p>")
+
+<% end %>

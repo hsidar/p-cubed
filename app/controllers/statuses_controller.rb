@@ -38,11 +38,10 @@ class StatusesController < ApplicationController
   # DELETE /statuses/1
   # DELETE /statuses/1.json
   def destroy
+    @project = Project.find(@status.project_id)
+    @statuses = @project.statuses.all
     @status.destroy
-    respond_to do |format|
-      format.html { redirect_to "/projects/" + @status.project.id.to_s, notice: 'Status was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    
   end
 
   private

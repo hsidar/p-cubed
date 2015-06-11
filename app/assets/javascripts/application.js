@@ -21,11 +21,17 @@
 			
 			$('.explode').slideUp(350, function(){
 					$('.slather').css({'z-index' : '-5', 'opacity' : '0'});
+                    $('.sassybutton').css({'display': ''});
 			});
+  
+
+
+
 		});
 		
 		$('.sassybutton').click(function(){
 			
 			$('.statupdate').slideDown(350);
+            $('.sassybutton').css({'display' : 'none'});
 		});
 	});
