@@ -11,13 +11,13 @@
 	</div>
 </div>
 
-<h1 style="text-align:center;">WHAT IS USER WORKING ON?</h1>
+<h1 style="text-align:center;">WHAT AM I WORKING ON?</h1>
 
 <div class="row" style="margin:10px;">
 <% @projects.each do |project|%>
 	<div class="col-md-4">
 	<div class="panel panel-default">
-		<div class="panel-heading">
+		<div class="panel-heading", style="background-color:rgb(0,0,0);">
 			<h3 class="panel-title"><%= project.title %></h3>
 			<p>since <%= project.startdate %></p>
 		</div>
