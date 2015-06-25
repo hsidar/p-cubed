@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'devise'
 # image upload
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 # all the prettiness
 gem 'bootstrap-sass'
 
