@@ -40,8 +40,6 @@ GEM
     autoprefixer-rails (5.2.0)
       execjs
       json
-    aws-sdk (1.64.0)
-      aws-sdk-v1 (= 1.64.0)
     aws-sdk-v1 (1.64.0)
       json (~> 1.4)
       nokogiri (>= 1.4.4)
@@ -180,7 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  aws-sdk (< 2.0)
+  aws-sdk-v1
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
