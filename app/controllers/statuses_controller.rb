@@ -19,6 +19,7 @@ class StatusesController < ApplicationController
     @status = Status.create(status_params)
     @project = Project.find(@status.project_id)
     @statuses = @project.statuses.all
+    @project.touch
   end
 
   # PATCH/PUT /statuses/1
@@ -41,7 +42,7 @@ class StatusesController < ApplicationController
     @project = Project.find(@status.project_id)
     @statuses = @project.statuses.all
     @status.destroy
-    
+
   end
 
   private

@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.order(:updated_at)
+    @projects = Project.order(updated_at: :desc)
   end
 
   # GET /projects/1
