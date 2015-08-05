@@ -1,8 +1,9 @@
 <%= image_tag @project.avatar.url(:normal) %>
 
 <p>
-  <strong>Title:</strong>
-  <%= @project.title %>
+  <h1>
+  <%= link_to @project.title, @project.link %>
+  </h1>
 </p>
 
 <p>
