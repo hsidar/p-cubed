@@ -18,7 +18,7 @@
 	<div class="col-md-4">
 	<div class="panel panel-default">
 		<div class="panel-heading", style="background-color:rgb(0,0,0);">
-			<h3 class="panel-title"><%= project.title %></h3>
+          <h3 class="panel-title"><%= link_to project.title, project, remote: true %></h3>
 			<p>since <%= project.startdate %></p>
 		</div>
 		<div class="panel-body">
